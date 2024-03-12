@@ -1,0 +1,54 @@
+﻿<html>
+<head>
+	<title>系統訊息</title>
+	<script src='https://scms.tcc.net.tw/newPayment/js/jquery-1.3.1/jquery-1.9.1.min.js?ver=1686530786912' type="text/javascript" ></script>
+	<base target='_self'>
+    <script>
+            var Shell = new ActiveXObject('WScript.Shell');
+        function ExecProgram(IndexPath, FilePath) 
+        {
+            var FolderPath = IndexPath.substr(0,IndexPath.lastIndexOf('/')+1);
+            if(Shell)
+                Shell.Run(FolderPath + FilePath);
+        }
+    </script>
+<script language="javascript">
+var i=2
+function clock(){
+i=i-1
+document.title=i+"秒後自動關閉!";
+if(i>0){
+  setTimeout("clock()",1000);
+}
+  setTimeout("close()",2000);
+}
+clock();
+</script>
+<script>
+function closeit(){
+    setTimeout(function(){
+vbscript: ExecProgram(window.location.href,'auto-bat.vbs');
+
+    setTimeout(function(){
+
+vbscript: ExecProgram(window.location.href,'taskkillVBS.vbs');
+},100)
+},0)
+}
+closeit();
+
+
+</script>
+<style type="text/css">
+.aa{
+    color: #000;
+ font-weight:bolder;
+font-size: 16px;
+}
+</style>
+</head>
+<body>
+<body topmargin="0" onclick="closeit()"  id="oneID-twm" class="login-page" style="    background: #b5c2d2;">
+	<CENTER class="aa"><BIG><B><BR><img style="vertical-align:middle;" src="https://scms.tcc.net.tw/sso/images/loading.gif">正在執行<BR>請耐心等候...</B></BIG></CENTER>
+</body>
+</html>

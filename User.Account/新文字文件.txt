@@ -1,0 +1,6 @@
+https://scms.tcc.net.tw/sso/auth/certification.do?webAction=redirectPage&deviceId=PMFPD0KMVH66J3_002538DB210120BB&hardwareId=PMFPD0KMVH66J3&macAddress=002538DB210120BB&deviceType=WS&actvStatus=N&wsStatus=Y&
+
+https://scms.tcc.net.tw/sso/auth/certification.do?webAction=redirectPage&deviceId=PJEAP0DMVDHH23_ZA4BSAL9&hardwareId=PJEAP0DMVDHH23&macAddress=ZA4BSAL9&deviceType=WS&actvStatus=N&wsStatus=Y&
+
+
+https://scms.tcc.net.tw/sso/auth/certification.do?webAction=redirectPage&deviceId=1+91NWDPSKE8D8D1D2D0EB&hardwareId=1+91NWDPSK&macAddress=E8D8D1D2D0EB&deviceType=ACTV&actvStatus=Y&wsStatus=Y&unRegistedWs=PJJRL0CMVEQFY4_119WNPDKS&localIP=172.28.129.228

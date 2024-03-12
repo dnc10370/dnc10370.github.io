@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- Include Bootstrap for styling -->
+<link rel="stylesheet" href=
+"\\DNC10370-PC3\WinHotKey\CSS\bootstrap.min.css" />
+
+<style>
+	.qr-code {
+	max-width: 200px;
+	margin: 10px;
+	}
+</style>
+	<script src="\\DNC10370-PC3\WinHotKey\CSS\clipboard.min.js"></script>
+<title>QR Code Generator</title>
+</head>
+
+<body>
+<div class="container-fluid" >
+	<div class="text-center">
+
+	<!-- Get a Placeholder image initially,
+	this will change according to the
+	data entered later -->
+	<img src=
+"https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=95x95&chld=L|0"
+		class="qr-code img-thumbnail img-responsive" />
+	</div>
+<form name="diyForm">
+	<div class="form-horizontal" >
+	<div class="form-group" >
+		<label class="control-label col-sm-2"
+		for="content" >
+		Content:
+		</label>
+		<div class="col-sm-10" class="center">
+
+		<!-- Input box to enter the
+			required data -->
+		<input type="text" size="23"
+			maxlength="60" class="form-control"
+			id="content" placeholder="Enter content" />
+
+		</div>
+	</div>
+
+	<div class="form-group" >
+		<div class="col-sm-offset-2 col-sm-10" class="center">
+
+		<!-- Button to generate QR Code for
+		the entered data -->
+		<button type="button" class=
+			"btn btn-default" id="generate" >
+			Generate
+		</button>
+
+		<button type="button" class=
+			"btn btn-default" id="copy" data-clipboard-target="#content">
+			Copy
+		</button>
+		</div>
+	</div>
+	</div>
+</div>
+</form>
+  <script src="\\DNC10370-PC3\WinHotKey\CSS\jquery.min.js"></script>
+ <script src="\\DNC10370-PC3\WinHotKey\CSS\jquery-qrcode.min.js"></script>
+
+<script>
+	// Function to HTML encode the text
+	// This creates a new hidden element,
+	// inserts the given text into it
+	// and outputs it out as HTML
+	function htmlEncode(value) {
+	return $('<div/>').text(value)
+		.html();
+	}
+
+	$(function () {
+
+	// Specify an onclick function
+	// for the generate button
+	$('#generate').click(function () {
+
+		// Generate the link that would be
+		// used to generate the QR Code
+		// with the given data
+		let finalURL =
+'https://chart.googleapis.com/chart?cht=qr&chl=' +
+		htmlEncode($('#content').val()) +
+		'&chs=95x95&chld=L|0'
+
+		// Replace the src of the image with
+		// the QR code image
+		$('.qr-code').attr('src', finalURL);
+	});
+	});
+</script>
+	<script>
+		new Clipboard( "#copy" );
+	</script>
+</body>
+
+</html>
